@@ -13,15 +13,34 @@ module dps_xintf_tb;
 	wire dsp_reset;
 	wire [15:0] data;
 	assign data = (nWR == 1'b0 && nCS == 1'b0) ? dataReg : 16'bz;
-
+	
 	dps_xintf_test UUT(
 		.address(address), 
-		.nCS(nCS), 
-		.data(data), 
-		.clk(clk), 
-		.nRD(nRD), 
+		.nCS(nCS),
+		.data(data),
+		.clk(clk),
+		.nRD(nRD),
 		.nWR(nWR), 
-		.dsp_reset(dsp_reset));
+		.dsp_reset(dsp_reset)
+//		.dsp_interrupt, 
+//		.dsp_done, // Interfacing with dsp
+//		.pulse_out, // Used to control driver, differential signal
+//		.control, // Used to trigger oscilloscope at maximum frequency
+//		.dsp_direction, // Direction signal from dsp
+//		.direction, // Control direction of servo motor, LVDS
+//		.ch_A, 
+//		.ch_B, 
+//		.encoder_require // Get encoder data
+	);
+
+//	dps_xintf_test UUT(
+//		.address(address), 
+//		.nCS(nCS),
+//		.data(data),
+//		.clk(clk),
+//		.nRD(nRD),
+//		.nWR(nWR), 
+//		.dsp_reset(dsp_reset));
 		
 	reg start = 1'b0;
 	reg [31:0] counter = 'd0;
@@ -39,15 +58,14 @@ module dps_xintf_tb;
 		
 		#100;		
 		start = 1'b1;
-		address = 'h3FFA;
+		address = 'h3FF0;
 		forever begin
-			#10 clk = ~clk;
+			#50 clk = ~clk;
 		end
 	end
 	
 	initial begin
 		@(posedge clk);
-		$stop;
 		repeat(`NUM*9) begin
 			@(posedge clk);
 			state = nextState;
@@ -55,7 +73,6 @@ module dps_xintf_tb;
 			writeOperation();
 		end
 		$display("Write operation done");
-		$stop;
 		address = 'b0;
 		state = 'b0;
 		nextState = 'b0;
@@ -68,7 +85,6 @@ module dps_xintf_tb;
 			readOperation();
 		end
 		$display("Read operation done");
-		$stop;
 	end
 	
 	task writeOperation;
