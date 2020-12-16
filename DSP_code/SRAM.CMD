@@ -53,7 +53,7 @@ PAGE 1 :
    HVAL		  : origin = 0x004004, length = 0x000004
    VELOCITY	  : origin = 0x004008, length = 0x000002
    DIVISOR	  : origin = 0x00400A, length = 0x000002
-   TEST		  : origin = 0x00400C, length = 0x000002
+   ENCODER	  : origin = 0x00400E, length = 0x000002
 }
  
  
@@ -114,7 +114,7 @@ SECTIONS
   hval			   : > HVAL, 		PAGE = 1
   velocity		   : > VELOCITY,	PAGE = 1
   divisor		   : > DIVISOR, 	PAGE = 1
-  testValue		   : > TEST,		PAGE = 1
+  encoder		   : > ENCODER,		PAGE = 1
    /* Map memory into FPGA */
 
 }

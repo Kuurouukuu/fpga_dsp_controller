@@ -7,7 +7,7 @@ module wishbone_arbiter(CYC_I, GNT, CYC, GNT_mux, CLK, RST);
 	output reg [3:0] GNT_mux;
 	output reg CYC;
 	
-	reg [3:0] state = 0, state_next = 0;
+	reg [3:0] state = 0;
 	reg [1:0] GNT_local = 'd0;
 	reg bus_require = 'b0;
 	

@@ -17,23 +17,22 @@ output CYC_O, STB_O, WE_O;
 // Module port
 input ch_A, ch_B, encoder_require;
 
-reg reset = 1'b0;
+
 reg [WISHBONE_DATAWIDTH:0] dataToLatch = 'h0;
-reg [5:0] counter = 'h0;
 reg [WISHBONE_DATAWIDTH:0] dataToSend = 'h0;
 reg [WISHBONE_ADDRESSWIDTH:0] address = 'h0;
-reg [WISHBONE_ADDRESSWIDTH:0] data = 'h0;
 
-reg [15:0] sent_counter = 'd0;
-reg [15:0] ack_counter = 'd0;
+
+
+reg [3:0] sent_counter = 4'd0;
+reg [3:0] ack_counter = 4'd0;
 //Wishbone Signal
 reg we = 'b0;
 reg re = 'b0;
 reg cyc = 'b0;
 reg stb = 'b0;
 
-wire ack;
-assign ack = ACK_I;
+
 assign WE_O = we | ~re;
 assign ADR_O = address;
 assign DAT_O = dataToSend;
@@ -73,20 +72,22 @@ begin
 	if (RST_I) // If reset
 	begin
 		wishbone_state <= 4'd0;
-		sent_counter <= 15'd0;
 	end else
 	begin
 		case (wishbone_state)
 			4'd0: begin // Idle
 				if (bus_trigger)
 				begin
+					sent_counter <= 4'd0;
 					cyc <= 1'b1;
 					stb <= 1'b0;
 					wishbone_state <= 4'd1;
 				end else
 				begin
+					cyc <= 1'b0;
+					stb <= 1'b0;
 					wishbone_state <= 4'd0;
-					sent_counter <= 15'd0;
+					sent_counter <= 4'd0;
 				end
 			end
 			4'd1: begin
@@ -115,7 +116,7 @@ begin
 							stb <= 1'b1;
 							address <= module_address[sent_counter];
 							dataToSend <= module_data[sent_counter];
-							sent_counter <= sent_counter + 15'd1;
+							sent_counter <= sent_counter + 4'd1;
 							wishbone_state <= 4'd3;
 						end else// Write all data
 							wishbone_state <= 4'd4;
@@ -127,7 +128,7 @@ begin
 							we <= 1'b0;
 							stb <= 1'b1;
 							address <= module_address[sent_counter];
-							sent_counter <= sent_counter + 15'd1;
+							sent_counter <= sent_counter + 4'd1;
 							wishbone_state <= 4'd3;
 						end else// Read all data
 							wishbone_state <= 4'd4;
@@ -149,7 +150,6 @@ begin
 				cyc <= 1'b0;
 				re <= 1'b0;
 				we <= 1'b0;
-				sent_counter <= 15'd0;
 				wishbone_state <= 4'd0;
 			end
 			default:
@@ -164,7 +164,7 @@ begin
 		ack_counter <= 'd0;
 	else if (ACK_I & cyc)
 	begin
-		ack_counter <= ack_counter + 'd1;
+		ack_counter <= ack_counter + 4'd1;
 		if (re)
 		begin
 			dataToLatch <= DAT_I;
@@ -186,7 +186,7 @@ sigmaV_decoder_top sigmaDecoder(
 	.rst(RST_I), 
 	.ch_A(ch_A), 
 	.ch_B(ch_B),
-	.velocity(encoder_counter)
+	.count(encoder_counter)
 	);
 // synthesis translate_off
 

@@ -22,11 +22,6 @@ extern interrupt void RXAISR(void);
 void printRequestString(const char * requestString);
 void printInfoString(const char * infoString);
 
-
-/*unsigned long q1_max = 136; // With assumption that 546.5 pulse is one round
-unsigned long q2_max = 2720;
-unsigned long q3_max = 76160;*/
-
 int main(void)
 {
     InitSysCtrl();
@@ -62,13 +57,19 @@ int main(void)
     //DEBUG:
     GpioDataRegs.GPADAT.bit.GPIOA0 = 1;
     GpioDataRegs.GPADAT.bit.GPIOA0 = 0;
+    GpioDataRegs.GPADAT.bit.GPIOA2 = 0;
     while (1)
     {
         if (start_flag == 1)
         {
             calculateTrajectory(); // Took while some time.
             start_flag = 0;
+            GpioDataRegs.GPADAT.bit.GPIOA2 = 1;
+            GpioDataRegs.GPADAT.bit.GPIOA2 = 0;
+            encoderValue = encoder;
+            // Toggle GPIOA2 to request Encoder value. Require rising edge
         }
+        // Update encoder value
     }
 
 	return 0;

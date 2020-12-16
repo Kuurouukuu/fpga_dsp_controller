@@ -4,12 +4,15 @@
 
 module dps_xintf_tb;
 
+	// Input
 	reg [14:0] address;
 	reg clk;
 	reg nRD, nWR;
 	reg nCS;
 	reg [15:0] dataReg;
-	
+	// Output
+	wire uart_tx;
+	wire uart_rx;	
 	wire dsp_reset;
 	wire [15:0] data;
 	assign data = (nWR == 1'b0 && nCS == 1'b0) ? dataReg : 16'bz;
@@ -21,27 +24,24 @@ module dps_xintf_tb;
 		.clk(clk),
 		.nRD(nRD),
 		.nWR(nWR), 
-		.dsp_reset(dsp_reset)
+		.dsp_reset(dsp_reset),
 //		.dsp_interrupt, 
 //		.dsp_done, // Interfacing with dsp
 //		.pulse_out, // Used to control driver, differential signal
 //		.control, // Used to trigger oscilloscope at maximum frequency
 //		.dsp_direction, // Direction signal from dsp
 //		.direction, // Control direction of servo motor, LVDS
+
 //		.ch_A, 
 //		.ch_B, 
-//		.encoder_require // Get encoder data
-	);
+//		.encoder_require, // Get encoder data
 
-//	dps_xintf_test UUT(
-//		.address(address), 
-//		.nCS(nCS),
-//		.data(data),
-//		.clk(clk),
-//		.nRD(nRD),
-//		.nWR(nWR), 
-//		.dsp_reset(dsp_reset));
-		
+		.uart_tx(uart_tx), 
+		.uart_rx(uart_rx)
+//		.uart_require
+	);
+	assign uart_rx = uart_tx;
+
 	reg start = 1'b0;
 	reg [31:0] counter = 'd0;
 	reg [2:0] state = 'd0;
@@ -161,5 +161,6 @@ module dps_xintf_tb;
 			end
 		endcase
 	end
-	endtask	
+	endtask
+
 endmodule

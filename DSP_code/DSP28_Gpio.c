@@ -27,10 +27,15 @@
 void InitGpio(void)
 {
     EALLOW;
+    // GPIO A0 for done signal
     GpioMuxRegs.GPAMUX.bit.PWM1_GPIOA0 = 0; // Use GPIOA0 as GPIO
     GpioMuxRegs.GPADIR.bit.GPIOA0 = 1; // GPIOA0 as Output
-    GpioMuxRegs.GPAMUX.bit.PWM1_GPIOA1 = 0; // Use GPIOA1 as GPIO
+    // GPIO A1 for rotating direction
+    GpioMuxRegs.GPAMUX.bit.PWM2_GPIOA1 = 0; // Use GPIOA1 as GPIO
     GpioMuxRegs.GPADIR.bit.GPIOA1 = 1; // GPIOA1 as Output
+    // GPIO A2 for encoder requirement
+    GpioMuxRegs.GPAMUX.bit.PWM3_GPIOA2 = 0; // Use GPIOA2 as GPIO
+    GpioMuxRegs.GPADIR.bit.GPIOA2 = 1; // GPIOA2 as Output
     EDIS;
 }	
 	

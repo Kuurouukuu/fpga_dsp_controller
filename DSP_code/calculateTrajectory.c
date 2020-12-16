@@ -61,7 +61,8 @@ void calculateTrajectory(void)
 
         // Third filter
         qVal_3[0] = qVal_3[1] + _IQ1mpyIQX(coeff_3, 20, (qVal_2[0] - qVal_2[N3-1]), 1);
-        velocity = _IQ1int(_IQ1mpyIQX((qVal_3[0] - qVal_3[1]), 1, reciprocalTs, 20))*60;
+        velocity = _IQ1mpyIQX((qVal_3[0] - qVal_3[1]), 1, reciprocalTs, 20);
+        velocity = _IQ1int(_IQ1mpyIQX(velocity, 1, _IQ1(60.0), 1));
         GpioDataRegs.GPADAT.bit.GPIOA1 = (velocity >> 31) & 0x0001; // get the 32th bit for the sign, or direction and set the pin accordingly
         timeValue = XIntruptRegs.XINT1CTR;
         divisor =  _IQ3int(_IQ3abs(_IQ3div(_IQ3(SYS_FREQ), _IQ3((float)velocity))));

@@ -108,7 +108,7 @@ unsigned long velocity;
 #pragma DATA_SECTION(divisor, "divisor");
 unsigned long divisor;
 
-#pragma DATA_SECTION(testValue, "testValue");
-unsigned long testValue;
+#pragma DATA_SECTION(encoder, "encoder");
+unsigned long encoder;
 
 

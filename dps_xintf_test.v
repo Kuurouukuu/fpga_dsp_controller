@@ -1,18 +1,22 @@
 module dps_xintf_test(
-	clk, //rst, // Input clock frequency and reset signal
+	clk, reset, // Input clock frequency and reset signal
 	address, nCS, data, nRD, nWR, dsp_reset, dsp_interrupt, dsp_done, // Interfacing with dsp
 	pulse_out, // Used to control driver, differential signal
 	probe, // Used to observe signal
 	control, // Used to trigger oscilloscope at maximum frequency
 	dsp_direction, // Direction signal from dsp
 	direction, // Control direction of servo motor, LVDS
-	ch_A, ch_B, encoder_require // Get encoder data
+	ch_A, ch_B, encoder_require, // Get encoder data
+	uart_tx, uart_rx, uart_require,
+	SEN
 	);
 	
-	input clk;
+	input clk, reset;
 	input nRD, nWR; // read, write
 	input nCS; //chip select, activelow
 	input dsp_done;
+	
+	input SEN;
 	
 	output pulse_out;
 	output dsp_reset;
@@ -26,7 +30,12 @@ module dps_xintf_test(
 	output direction;
 	output control;
 	
-	reg rst = 1'b0;
+	input uart_rx;
+	output uart_tx;
+	input uart_require;
+	
+	wire rst;
+	assign rst = ~reset;
 	
 	parameter [4:0] WISHBONE_DATAWIDTH = 'd16;
 	parameter [4:0] WISHBONE_ADDRESSWIDTH = 'd16;
@@ -34,15 +43,12 @@ module dps_xintf_test(
 	parameter [4:0] NUM_OF_SEL_BITS = 'd2; // = Ceil(log2(NUM_OF_MASTER));
 	parameter [4:0] MAX_BUFFER_SIZE = 'd4;
 	
-	reg [15:0] dataIn, dataReg;
-	reg o_dsp_interrupt = 'b0;
-	reg [14:0] internal_address = 'b0;
-	reg [31:0] divisor = 'b0;	
+	reg [15:0] dataIn, dataReg;	
 	reg [3:0] updateDivisor_state = 'd0;
-	reg [2:0] updateDivisor_counter = 'd0;
-	reg divisor_rst = 1'b0;
 	reg divisor_update = 1'b0;
+	reg [1:0] SEN_reg = 1'b0;
 	
+	wire SEN_flag;
 	wire clk_1s;
 	wire clk_sampling;
 	wire [15:0] dataOut;
@@ -50,16 +56,16 @@ module dps_xintf_test(
 	wire sampling_run_1;
 	
 	// Wishbone signal
-	wire [15:0] DAT_m1_clockDivisor, DAT_s1, DAT_m2_encoder;
-	wire STB_m1_clockDivisor, STB_s1, STB_m2_encoder;
-	wire WE_m1_clockDivisor, WEI_s1, WE_m2_encoder;
-	wire ACK_s1, ACK_m1_clockDivisor, ACK_m2_encoder;
-	wire [15:0] ADR_m1_clockDivisor, ADR_m2_encoder, ADRI_s1;
-	wire CYC_m1_clockDivisor, CYC_m2_encoder;
+	wire [15:0] DAT_m1_clockDivisor, DAT_s1, DAT_m2_encoder, DAT_s2, DAT_m3_uart;
+	wire STB_m1_clockDivisor, STB_s1, STB_m2_encoder, STB_m3_uart;
+	wire WE_m1_clockDivisor, WEI_s1, WE_m2_encoder, WE_m3_uart;
+	wire ACK_s1, ACK_m1_clockDivisor, ACK_m2_encoder, ACK_m3_uart;
+	wire [15:0] ADR_m1_clockDivisor, ADR_m2_encoder, ADR_m3_uart, ADRI_s1;
+	wire CYC_m1_clockDivisor, CYC_m2_encoder, CYC_m3_uart;
 	wire STALL_s1;
 
 	//Shared bus wire
-	wire [NUM_OF_MASTER-1:0] GNT;
+	wire [NUM_OF_SEL_BITS-1:0] GNT;
 	wire [WISHBONE_DATAWIDTH-1:0] DAT; // 16 bit data bus
 	wire [WISHBONE_ADDRESSWIDTH-1:0] ADR;
 	wire STB;
@@ -106,11 +112,30 @@ module dps_xintf_test(
 		.ADR_O(ADR_m2_encoder),
 		.STALL_I(STALL),
 		.GNT(GNT_mux[1]),
+		
 		.ch_A(ch_A),
 		.ch_B(ch_B),
 		.encoder_require(encoder_require)
 	);
+
+	//Master 3: UART
+	wb_compatible_uart uart(
+		.CLK_I(clk),
+		.DAT_I(DAT_fromSlave),
+		.DAT_O(DAT_m3_uart),
+		.RST_I(rst),
+		.CYC_O(CYC_m3_uart),
+		.ACK_I(ACK_m3_uart),
+		.STB_O(STB_m3_uart),
+		.WE_O(WE_m3_uart),
+		.ADR_O(ADR_m3_uart),
+		.STALL_I(STALL),
+		.GNT(GNT_mux[2]),
 		
+		.tx(uart_tx),
+		.rx(uart_rx),
+		.uart_require(uart_require)
+	);	
 	clock_divisor_reset SamplingFrequencyGenerator( // Generate sampling frequency = 18750000/divisor
 		.clk_in(clk),
 		.divisor('d187500),
@@ -123,7 +148,8 @@ module dps_xintf_test(
 		.address_b ( {4'b0000, ADR[10:0] }), // Internal address
 		.clock_a ( clk ),
 		.clock_b ( clk ), // Both used clock from DSP
-		.enable_a ( 'b1 ),
+		.enable_a ( 1'b1 ),
+		.enable_b ( 1'b1 ),
 		.data_a ( data ), // Data in from dsp
 		.data_b (DAT), // Data in from wishbone bus
 		.wren_a ( ~(nWR) & ~(nCS) ), // Controlled by DSP
@@ -170,10 +196,10 @@ module dps_xintf_test(
 		endcase
 	end
 	
-	assign data = (nCS == 1'b0 && nRD == 1'b0) ? dataOut : 'hz;  // Select and read.
+	assign data = (nCS == 1'b0 && nRD == 1'b0) ? dataOut : 16'hz;  // Select and read.
 	
 	// Always pull high
-	assign dsp_reset = 1'b1;
+	assign dsp_reset = reset;
 	
 	// Output to driver
 	assign pulse_out = velocity_control_signal;
@@ -183,20 +209,26 @@ module dps_xintf_test(
 	assign dsp_interrupt = clk_sampling;
 	assign direction = dsp_direction;
 	
+	// SEN edge detector
+	always@(posedge clk)
+	begin
+		SEN_reg <= {SEN_reg[0], SEN_reg[1]};
+		SEN_reg[0] <= SEN;
+	end
+	assign SEN_flag = SEN_reg[0] & ~SEN_reg[1];
 	/* Wishbone bus------------------------------------------*/
-
 	
-	//assign DAT_fromSlave = DAT_s1; // Because there is only 1 slave. If there are more slave, with more address, will add a multiplexer for this purpose
 	assign ACK = ACK_s1; // Will use multi-input OR later
 	assign ACK_m1_clockDivisor = ACK & GNT_mux[0];
 	assign ACK_m2_encoder = ACK & GNT_mux[1];
+	assign ACK_m3_uart = ACK & GNT_mux[2];
 	assign STALL = STALL_s1;
 		
 	// Multiplexer part - Master
 	multiplexer_n #(.INPUT_WIDTH(WISHBONE_ADDRESSWIDTH)) ADR_mux(
 		.IN1(ADR_m1_clockDivisor),
 		.IN2(ADR_m2_encoder),
-		//.IN3(),
+		.IN3(ADR_m3_uart),
 		//.IN4(),
 		.OUT(ADR),
 		.SEL(GNT));
@@ -204,25 +236,25 @@ module dps_xintf_test(
 	multiplexer_n #(.INPUT_WIDTH(WISHBONE_DATAWIDTH)) DATA_mux(
 		.IN1(DAT_m1_clockDivisor),
 		.IN2(DAT_m2_encoder),
-		//.IN3(),
+		.IN3(DAT_m3_uart),
 		//.IN4(),
 		.OUT(DAT),
 		.SEL(GNT)
 	);
 		
 	multiplexer #(.NUM_OF_INPUT(NUM_OF_MASTER), .NUM_OF_SEL_BITS(NUM_OF_SEL_BITS)) WE_mux(
-		.IN({1'b0, 1'b0, WE_m2_encoder, WE_m1_clockDivisor}),
+		.IN({1'b0, WE_m3_uart, WE_m2_encoder, WE_m1_clockDivisor}),
 		.OUT(WE),
 		.SEL(GNT));
 		
 	multiplexer #(.NUM_OF_INPUT(NUM_OF_MASTER), .NUM_OF_SEL_BITS(NUM_OF_SEL_BITS)) STB_mux(
-		.IN({1'b0, 1'b0, STB_m2_encoder, STB_m1_clockDivisor}),
+		.IN({1'b0, STB_m3_uart, STB_m2_encoder, STB_m1_clockDivisor}),
 		.OUT(STB),
 		.SEL(GNT));
 		
 	// Arbiter part
 	wishbone_arbiter arbiter(
-		.CYC_I({1'b0, 1'b0, CYC_m2_encoder, CYC_m1_clockDivisor}), 
+		.CYC_I({1'b0, CYC_m3_uart, CYC_m2_encoder, CYC_m1_clockDivisor}), 
 		.GNT(GNT),
 		.CYC(CYC),
 		.GNT_mux(GNT_mux),

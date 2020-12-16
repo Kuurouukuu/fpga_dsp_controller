@@ -1,7 +1,7 @@
-module sigmaV_decoder_top(clk, rst, ch_A, ch_B, velocity);
+module sigmaV_decoder_top(clk, rst, ch_A, ch_B, count);
 
 	input clk, rst, ch_A, ch_B;
-	output [31:0] velocity;
+	output [31:0] count;
 	
 	wire debounced_chA, debounced_chB;
 	
@@ -24,10 +24,8 @@ module sigmaV_decoder_top(clk, rst, ch_A, ch_B, velocity);
 	.clk(clk), 
 	.quadA(debounced_chA), 
 	.quadB(debounced_chB), 
-	//.count, 
-	.rst(rst), 
-	.o_velocity(velocity)
-	//.count2
+	.count(count), 
+	.rst(rst)
 	);
 	
 //	always@(posedge clk)

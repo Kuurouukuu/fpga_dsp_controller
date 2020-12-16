@@ -1,0 +1,451 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C8 (0x020B20DD)" sof_file="">
+  <display_tree gui_logging_enabled="0">
+    <display_branch instance="Encoder" log="USE_GLOBAL_TEMP" signal_set="USE_GLOBAL_TEMP" trigger="USE_GLOBAL_TEMP"/>
+  </display_tree>
+  <mnemonics/>
+  <static_plugin_mnemonics/>
+  <instance entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="Encoder" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="2" mfg_id="110" node_id="0" version="6"/>
+    <signal_set global_temp="1" is_expanded="true" name="signal_set: 2020/12/15 14:40:52  #0">
+      <clock name="clk" polarity="posedge" tap_mode="classic"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_storage_qualifier_nodes="0" reserved_trigger_nodes="0" sample_depth="512" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire name="wb_compatible_encoder:decoder|ACK_I" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|CYC_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|GNT" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|STALL_I" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|STB_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|WE_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ch_A" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ch_B" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[24]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[25]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[26]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[27]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[28]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[29]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[30]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[31]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[9]" tap_mode="classic" type="combinatorial"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire name="wb_compatible_encoder:decoder|ACK_I" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|CYC_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|GNT" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|STALL_I" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|WE_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ch_A" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ch_B" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[24]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[25]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[26]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[27]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[28]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[29]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[30]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[31]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[9]" tap_mode="classic" type="combinatorial"/>
+        </data_input_vec>
+        <storage_qualifier_input_vec>
+          <wire name="wb_compatible_encoder:decoder|ACK_I" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ADR_O[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|CYC_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|DAT_O[9]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|GNT" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|STALL_I" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|STB_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|WE_O" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ch_A" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|ch_B" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[0]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[10]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[11]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[12]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[13]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[14]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[15]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[16]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[17]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[18]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[19]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[1]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[20]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[21]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[22]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[23]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[24]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[25]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[26]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[27]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[28]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[29]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[2]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[30]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[31]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[3]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[4]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[5]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[6]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[7]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[8]" tap_mode="classic" type="combinatorial"/>
+          <wire name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[9]" tap_mode="classic" type="combinatorial"/>
+        </storage_qualifier_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ACK_I"/>
+          <bus is_signal_inverted="no" link="all" name="wb_compatible_encoder:decoder|ADR_O" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[15]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[14]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[13]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[12]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[11]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[10]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[9]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[8]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[7]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[6]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[5]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[4]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[3]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[2]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[1]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|CYC_O"/>
+          <bus is_signal_inverted="no" link="all" name="wb_compatible_encoder:decoder|DAT_O" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[15]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[14]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[13]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[12]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[11]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[10]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[9]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[8]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[7]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[6]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[5]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[4]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[3]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[2]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[1]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|GNT"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|STALL_I"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|WE_O"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ch_A"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ch_B"/>
+          <bus is_signal_inverted="no" link="all" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count" order="msb_to_lsb" radix="signed_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[31]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[30]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[29]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[28]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[27]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[26]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[25]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[24]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[23]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[22]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[21]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[20]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[19]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[18]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[17]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[16]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[15]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[14]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[13]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[12]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[11]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[10]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[9]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[8]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[7]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[6]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[5]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[4]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[3]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[2]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[1]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[0]"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ACK_I"/>
+          <bus is_signal_inverted="no" link="all" name="wb_compatible_encoder:decoder|ADR_O" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[15]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[14]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[13]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[12]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[11]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[10]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[9]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[8]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[7]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[6]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[5]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[4]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[3]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[2]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[1]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ADR_O[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|CYC_O"/>
+          <bus is_signal_inverted="no" link="all" name="wb_compatible_encoder:decoder|DAT_O" order="msb_to_lsb" radix="hex" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[15]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[14]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[13]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[12]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[11]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[10]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[9]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[8]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[7]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[6]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[5]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[4]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[3]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[2]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[1]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|DAT_O[0]"/>
+          </bus>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|GNT"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|STALL_I"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|STB_O"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|WE_O"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ch_A"/>
+          <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|ch_B"/>
+          <bus is_signal_inverted="no" link="all" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count" order="msb_to_lsb" radix="signed_dec" state="collapse" type="combinatorial">
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[31]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[30]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[29]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[28]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[27]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[26]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[25]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[24]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[23]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[22]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[21]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[20]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[19]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[18]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[17]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[16]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[15]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[14]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[13]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[12]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[11]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[10]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[9]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[8]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[7]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[6]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[5]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[4]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[3]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[2]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[1]"/>
+            <net is_signal_inverted="no" name="wb_compatible_encoder:decoder|sigmaV_decoder_top:sigmaDecoder|count[0]"/>
+          </bus>
+        </setup_view>
+      </presentation>
+      <trigger CRC="4C80BB62" attribute_mem_mode="false" gap_record="true" global_temp="1" is_expanded="true" name="trigger: 2020/12/15 14:55:56  #0" position="pre" power_up_trigger_mode="false" record_data_gap="true" segment_size="64" storage_mode="off" storage_qualifier_disabled="no" storage_qualifier_port_is_pin="false" storage_qualifier_port_name="auto_stp_external_storage_qualifier" storage_qualifier_port_tap_mode="classic" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" storage_qualifier_disabled="no" trigger_in="dont_care" trigger_out="active high"/>
+        <events use_custom_flow_control="no">
+          <level enabled="yes" name="condition1" type="basic"><power_up enabled="yes">
+            </power_up><op_node/>
+          </level>
+        </events>
+        <storage_qualifier_events>
+          <transitional>000000000000000000000000000000000000000000000000000000000000000000000000
+            <pwr_up_transitional>000000000000000000000000000000000000000000000000000000000000000000000000</pwr_up_transitional>
+          </transitional>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+          <storage_qualifier_level type="basic">
+            <power_up>
+            </power_up>
+            <op_node/>
+          </storage_qualifier_level>
+        </storage_qualifier_events>
+        <log>
+          <data global_temp="1" name="log: 2020/12/16 14:06:45  #0" power_up_mode="false" sample_depth="512" trigger_position="64">0100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000010000101110000000000000000000000000111100000000000000000000000000000000100001011100000000000000000000000001111000000000000000000000000000000001000010111000000000000000000000000011110000000000000000000000000000000</data>
+          <extradata>1111111111111111111111111111111111111111111111111111111111111111T111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111</extradata>
+        </log>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="0"/>
+      <single attribute="data horizontal scroll position" value="0"/>
+      <single attribute="data vertical scroll position" value="0"/>
+      <single attribute="zoom level denominator" value="1"/>
+      <single attribute="zoom level numerator" value="1"/>
+      <single attribute="zoom offset denominator" value="1"/>
+      <single attribute="zoom offset numerator" value="130561"/>
+    </position_info>
+  </instance>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="config widget visible" value="1"/>
+    <single attribute="data log widget visible" value="1"/>
+    <single attribute="hierarchy widget visible" value="1"/>
+    <single attribute="instance widget visible" value="1"/>
+    <single attribute="jtag widget visible" value="1"/>
+    <multi attribute="column width" size="23" value="34,34,243,74,68,70,88,88,98,98,88,88,110,101,101,101,101,101,101,101,101,107,78"/>
+    <multi attribute="frame size" size="2" value="761,745"/>
+    <multi attribute="jtag widget size" size="2" value="320,120"/>
+  </global_info>
+</session>
