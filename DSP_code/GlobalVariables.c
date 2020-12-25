@@ -28,8 +28,10 @@ unsigned int start_flag = 0;
 int direction = 0; // Sign of velocity
 
 unsigned int k = 0;
+unsigned int turn = 0;
 long encoderValue = 0;
 
+long *encoderArray;
 extern _iq1 hVal[2];
 extern _iq1 qVal_3[2];
 extern long velocity;
@@ -39,9 +41,9 @@ extern unsigned long encoder;
 int cmdFlag = 0;
 unsigned int nMin = 0;
 
-unsigned long h = 100000;
+unsigned long h = 50000;
 // TODO: make this reconfigurable
-unsigned long q1_max = 8533; // With assumption that 2048 pulse is  one round
-unsigned long q2_max = 8533;
-unsigned long q3_max = 17066;
+unsigned long q1_max = 12798; // With assumption that 2048 pulse is  one round
+unsigned long q2_max = 12798;
+unsigned long q3_max = 25596;
 _iq Ts = _IQ20((float)0.01);

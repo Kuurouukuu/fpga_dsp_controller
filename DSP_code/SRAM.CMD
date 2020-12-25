@@ -49,11 +49,12 @@ PAGE 1 :
    RAML0L1	  : origin = 0x008000, length = 0x002000
 
    /* Memory for qVal3 and hVal */
-   QVAL3	  : origin = 0x004000, length = 0x000004
-   HVAL		  : origin = 0x004004, length = 0x000004
-   VELOCITY	  : origin = 0x004008, length = 0x000002
-   DIVISOR	  : origin = 0x00400A, length = 0x000002
-   ENCODER	  : origin = 0x00400E, length = 0x000002
+   QVAL3	  		: origin = 0x004000, length = 0x000004
+   HVAL		  		: origin = 0x004004, length = 0x000004
+   VELOCITY	  		: origin = 0x004008, length = 0x000002
+   DIVISOR	  		: origin = 0x00400A, length = 0x000002
+   ENCODER	  		: origin = 0x00400E, length = 0x000002
+   PULSECOUNT		: origin = 0x004010, length = 0x000002
 }
  
  
@@ -65,7 +66,7 @@ SECTIONS
    .cinit           : > PRAMH0,      PAGE = 0
 
    /* Allocate data areas: */
-   .stack           : > RAMM1,       		   PAGE = 1
+   .stack           : > RAMM1 | RAML0L1,       		   PAGE = 1
    .bss             : > DRAMH0 | RAML0L1,      PAGE = 1
    .ebss            : > DRAMH0 | RAML0L1,      PAGE = 1
    .const           : > DRAMH0 | RAML0L1,      PAGE = 1

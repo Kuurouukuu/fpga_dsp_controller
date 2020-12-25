@@ -25,7 +25,9 @@ extern _iq15 h_temp[BUFFER_LENGTH];
 extern int temp_index;
 extern unsigned int k;
 
-extern unsigned long encoderValue;
+extern long *encoderArray;
+extern long encoderValue;
+extern unsigned int turn;
 extern unsigned long encoder;
 
 extern unsigned long index;

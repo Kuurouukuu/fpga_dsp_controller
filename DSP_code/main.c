@@ -62,11 +62,10 @@ int main(void)
     {
         if (start_flag == 1)
         {
-            calculateTrajectory(); // Took while some time.
+            calculateTrajectory_MOTOR1(); // Took while some time.
             start_flag = 0;
             GpioDataRegs.GPADAT.bit.GPIOA2 = 1;
             GpioDataRegs.GPADAT.bit.GPIOA2 = 0;
-            encoderValue = encoder;
             // Toggle GPIOA2 to request Encoder value. Require rising edge
         }
         // Update encoder value

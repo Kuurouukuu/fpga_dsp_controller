@@ -31,7 +31,7 @@ wire count_enable = quadA ^ quadA_delayed ^ quadB ^ quadB_delayed;
 wire count_direction = quadA ^ quadB_delayed;
 
 
-always @(posedge clk, posedge rst)
+always @(posedge clk)
 begin
   if (rst)
   begin

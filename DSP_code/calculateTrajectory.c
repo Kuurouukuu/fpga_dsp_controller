@@ -11,9 +11,9 @@
 #include "DSP28_Device.h"
 
 
-void calculateTrajectory(void)
+void calculateTrajectory_MOTOR1(void)
 {
-    if ( (k < nMin) )// Sampling time interrupted
+    if ( (k < nMin+100) )// Sampling time interrupted
     {
         k = k + 1;
         counter = counter + 1;
@@ -69,10 +69,29 @@ void calculateTrajectory(void)
         qVal_3[1] = qVal_3[0];
 
         hVal[1] = hVal[0]; // Shift
+        encoderValue = encoder;
+        encoderArray[k] = encoderValue;
         start_flag = 0;
     } else
     {
-        ; // No-op
+        if (turn == 0)
+        {
+            turn = 1;
+            k = 0;
+            hVal[0] = _IQ1(75000.0);
+        } else
+        if (turn == 1)
+        {
+            turn = 2;
+            k = 0;
+            hVal[0] = _IQ1(25000.0);
+        } else
+        if (turn == 2)
+        {
+            turn = 3;
+            k = 0;
+            hVal[0] = _IQ1(0.0);
+        }
     }
 }
 
@@ -100,10 +119,11 @@ void InitValue(void)
     coeff_2 = _IQ20div(_IQ20(1.0f), _IQ20((float)N2));
     coeff_3 = _IQ20div(_IQ20(1.0f), _IQ20((float)N3));
 
-    hVal[0] = _IQ1((float)h);
+    hVal[0] = _IQ1((float)50000);
     qVal_1 = calloc(N2+1, 2); // 2 bytes per _iq, each bytes is 16 bit
     qVal_2 = calloc(N3+1, 2); // Plus one due to truncating.
     nMin = _IQ20int(_IQ20div((T1+T2+T3), Ts));
+    encoderArray = calloc(1500, 2);
     //nMin = _IQint(_IQ5div(_IQ5mpyIQX(_IQ5((float)h), 5, reciprocalTs, 20), _IQ5((float)q1_max)));
 
 }
