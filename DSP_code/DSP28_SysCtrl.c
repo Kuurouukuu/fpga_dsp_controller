@@ -73,6 +73,13 @@ void InitSysCtrl(void)
   XintfRegs.XTIMING1.bit.XRDTRAIL = 0b11;
   XintfRegs.XTIMING1.bit.XWRTRAIL = 0b11;
 
+  XintfRegs.XTIMING6.bit.XRDLEAD = 0b11;
+  XintfRegs.XTIMING6.bit.XWRLEAD = 0b11;
+  XintfRegs.XTIMING6.bit.XRDACTIVE = 0b111;
+  XintfRegs.XTIMING6.bit.XWRACTIVE = 0b111;
+  XintfRegs.XTIMING6.bit.XRDTRAIL = 0b11;
+  XintfRegs.XTIMING6.bit.XWRTRAIL = 0b11;
+
 				
    EDIS;
 	

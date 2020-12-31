@@ -4,6 +4,9 @@ MEMORY
 PAGE 0 : 
    PRAMH0     : origin = 0x3f8000, length = 0x001000       
    IQTABLES	  : origin = 0x3ff000, length = 0x000b50
+
+   /* SDRAM */
+   SDRAM	  : origin = 0x00100000, length = 0x00100000
          
 PAGE 1 : 
    /* SARAM                     */     
@@ -54,7 +57,24 @@ PAGE 1 :
    VELOCITY	  		: origin = 0x004008, length = 0x000002
    DIVISOR	  		: origin = 0x00400A, length = 0x000002
    ENCODER	  		: origin = 0x00400E, length = 0x000002
-   PULSECOUNT		: origin = 0x004010, length = 0x000002
+
+   QVAL3_MOTOR2	  			: origin = 0x004010, length = 0x000004
+   HVAL_MOTOR2		  		: origin = 0x004014, length = 0x000004
+   VELOCITY_MOTOR2	  		: origin = 0x004018, length = 0x000002
+   DIVISOR_MOTOR2	  		: origin = 0x00401A, length = 0x000002
+   ENCODER_MOTOR2			: origin = 0x00401E, length = 0x000002
+
+   QVAL3_MOTOR3	  			: origin = 0x004020, length = 0x000004
+   HVAL_MOTOR3		  		: origin = 0x004024, length = 0x000004
+   VELOCITY_MOTOR3	  		: origin = 0x004028, length = 0x000002
+   DIVISOR_MOTOR3	  		: origin = 0x00402A, length = 0x000002
+   ENCODER_MOTOR3			: origin = 0x00402E, length = 0x000002
+
+   QVAL3_MOTOR4	  			: origin = 0x004030, length = 0x000004
+   HVAL_MOTOR4		  		: origin = 0x004034, length = 0x000004
+   VELOCITY_MOTOR4	  		: origin = 0x004038, length = 0x000002
+   DIVISOR_MOTOR4	  		: origin = 0x00403A, length = 0x000002
+   ENCODER_MOTOR4			: origin = 0x00403E, length = 0x000002
 }
  
  
@@ -62,8 +82,8 @@ SECTIONS
 {
    /* Allocate program areas: */
    .reset           : > PRAMH0,      PAGE = 0
-   .text            : > PRAMH0,      PAGE = 0
-   .cinit           : > PRAMH0,      PAGE = 0
+   .text            : > PRAMH0 | SDRAM,      PAGE = 0
+   .cinit           : > PRAMH0 | SDRAM,      PAGE = 0
 
    /* Allocate data areas: */
    .stack           : > RAMM1 | RAML0L1,       		   PAGE = 1
@@ -116,6 +136,24 @@ SECTIONS
   velocity		   : > VELOCITY,	PAGE = 1
   divisor		   : > DIVISOR, 	PAGE = 1
   encoder		   : > ENCODER,		PAGE = 1
+
+  qval3_motor2			   : > QVAL3_MOTOR2,		PAGE = 1
+  hVal_motor2			   : > HVAL_MOTOR2, 		PAGE = 1
+  velocity_motor2		   : > VELOCITY_MOTOR2,	PAGE = 1
+  divisor_motor2		   : > DIVISOR_MOTOR2, 	PAGE = 1
+  encoder_motor2		   : > ENCODER_MOTOR2,		PAGE = 1
+
+  qval3_motor3			   : > QVAL3_MOTOR3,		PAGE = 1
+  hVal_motor3			   : > HVAL_MOTOR3, 		PAGE = 1
+  velocity_motor3		   : > VELOCITY_MOTOR3,	PAGE = 1
+  divisor_motor3		   : > DIVISOR_MOTOR3, 	PAGE = 1
+  encoder_motor3		   : > ENCODER_MOTOR3,		PAGE = 1
+
+  qval3_motor4			   : > QVAL3_MOTOR4,		PAGE = 1
+  hVal_motor4			   : > HVAL_MOTOR4, 		PAGE = 1
+  velocity_motor4		   : > VELOCITY_MOTOR4,	PAGE = 1
+  divisor_motor4		   : > DIVISOR_MOTOR4, 	PAGE = 1
+  encoder_motor4		   : > ENCODER_MOTOR4,		PAGE = 1
    /* Map memory into FPGA */
 
 }

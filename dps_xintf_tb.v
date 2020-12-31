@@ -10,6 +10,7 @@ module dps_xintf_tb;
 	reg nRD, nWR;
 	reg nCS;
 	reg [15:0] dataReg;
+	reg calculating_indicator;
 	// Output
 	wire uart_tx;
 	wire uart_rx;	
@@ -31,13 +32,13 @@ module dps_xintf_tb;
 //		.control, // Used to trigger oscilloscope at maximum frequency
 //		.dsp_direction, // Direction signal from dsp
 //		.direction, // Control direction of servo motor, LVDS
-
+		.calculating_indicator(calculating_indicator)
 //		.ch_A, 
 //		.ch_B, 
 //		.encoder_require, // Get encoder data
 
-		.uart_tx(uart_tx), 
-		.uart_rx(uart_rx)
+//		.uart_tx(uart_tx), 
+//		.uart_rx(uart_rx)
 //		.uart_require
 	);
 	assign uart_rx = uart_tx;
@@ -55,7 +56,7 @@ module dps_xintf_tb;
 		nRD = 1'b1;
 		nWR = 1'b1;
 		nCS = 1'b1;
-		
+		calculating_indicator = 1'b0;
 		#100;		
 		start = 1'b1;
 		address = 'h3FF0;
@@ -85,6 +86,8 @@ module dps_xintf_tb;
 			readOperation();
 		end
 		$display("Read operation done");
+		$stop;
+		calculating_indicator = 1'b1;
 	end
 	
 	task writeOperation;

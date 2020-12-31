@@ -111,4 +111,47 @@ unsigned long divisor;
 #pragma DATA_SECTION(encoder, "encoder");
 unsigned long encoder;
 
+// Motor 2
+
+#pragma DATA_SECTION(hVal_motor2,"hVal_motor2");
+long hVal_motor2[2]; // used as _iq
+
+#pragma DATA_SECTION(qVal_3_motor2,"qval3_motor2");
+long qVal_3_motor2[2]; // used as _iq
+
+#pragma DATA_SECTION(velocity_motor2, "velocity_motor2");
+unsigned long velocity_motor2;
+
+#pragma DATA_SECTION(divisor_motor2, "divisor_motor2");
+unsigned long divisor_motor2;
+
+
+// Motor 3
+
+#pragma DATA_SECTION(hVal_motor3,"hVal_motor3");
+long hVal_motor3[2]; // used as _iq
+
+#pragma DATA_SECTION(qVal_3_motor3,"qval3_motor3");
+long qVal_3_motor3[2]; // used as _iq
+
+#pragma DATA_SECTION(velocity_motor3, "velocity_motor3");
+unsigned long velocity_motor3;
+
+#pragma DATA_SECTION(divisor_motor3, "divisor_motor3");
+unsigned long divisor_motor3;
+
+// Motor 4
+
+#pragma DATA_SECTION(hVal_motor4,"hVal_motor4");
+long hVal_motor4[2]; // used as _iq
+
+#pragma DATA_SECTION(qVal_3_motor4,"qval3_motor4");
+long qVal_3_motor4[2]; // used as _iq
+
+#pragma DATA_SECTION(velocity_motor4, "velocity_motor4");
+unsigned long velocity_motor4;
+
+#pragma DATA_SECTION(divisor_motor4, "divisor_motor4");
+unsigned long divisor_motor4;
+
 

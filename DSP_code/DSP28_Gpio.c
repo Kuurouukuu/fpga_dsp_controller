@@ -36,6 +36,9 @@ void InitGpio(void)
     // GPIO A2 for encoder requirement
     GpioMuxRegs.GPAMUX.bit.PWM3_GPIOA2 = 0; // Use GPIOA2 as GPIO
     GpioMuxRegs.GPADIR.bit.GPIOA2 = 1; // GPIOA2 as Output
+    // GPIO A3 for calculating indicator
+    GpioMuxRegs.GPAMUX.bit.PWM4_GPIOA3 = 0; // Use GPIOA2 as GPIO
+    GpioMuxRegs.GPADIR.bit.GPIOA3 = 1; // GPIOA2 as Output
     EDIS;
 }	
 	

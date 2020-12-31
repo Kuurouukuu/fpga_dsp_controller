@@ -184,7 +184,7 @@ end
 				 .rx_empty		(empty)		,
 				 .tx				(tx)			,
 				 .tx_full		(full)		,
-				 .char_detected (char_detected),
+				 .char_detected (char_detected)
 		  );        
 
 

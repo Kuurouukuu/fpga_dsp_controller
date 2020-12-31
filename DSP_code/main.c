@@ -18,9 +18,14 @@
 extern interrupt void ExtIntISR(void);
 extern interrupt void TXAISR(void);
 extern interrupt void RXAISR(void);
+extern calculateTrajectory_MOTOR1(void);
+extern calculateTrajectory_MOTOR2(void);
+extern calculateTrajectory_MOTOR3(void);
+extern calculateTrajectory_MOTOR4(void);
 
 void printRequestString(const char * requestString);
 void printInfoString(const char * infoString);
+void InitRam(void);
 
 int main(void)
 {
@@ -42,6 +47,8 @@ int main(void)
 
     InitValue();
 
+    CalculateParameters();
+
     EALLOW;
     PieVectTable.XINT1 = &ExtIntISR;//External interrupt 1 of the interrupt vector table points to the interrupt service register function
     PieVectTable.TXAINT = &TXAISR;
@@ -62,8 +69,16 @@ int main(void)
     {
         if (start_flag == 1)
         {
+            GpioDataRegs.GPADAT.bit.GPIOA3 = 1;
+            //DINT;
             calculateTrajectory_MOTOR1(); // Took while some time.
+            calculateTrajectory_MOTOR2();
+            calculateTrajectory_MOTOR3();
+            calculateTrajectory_MOTOR4();
+            //EINT;
+            timeValue = XIntruptRegs.XINT1CTR;
             start_flag = 0;
+            GpioDataRegs.GPADAT.bit.GPIOA3 = 0;
             GpioDataRegs.GPADAT.bit.GPIOA2 = 1;
             GpioDataRegs.GPADAT.bit.GPIOA2 = 0;
             // Toggle GPIOA2 to request Encoder value. Require rising edge
@@ -85,6 +100,12 @@ void printRequestString(const char * requestString)
 void printInfoString(const char * infoString)
 {
     ;
+}
+
+void InitRam(void)
+{
+    Uint16  i;
+    for (i=0;i<0x4000;i++)      *(ExRamStart + i) = 0;
 }
 
 

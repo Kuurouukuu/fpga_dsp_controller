@@ -1,10 +1,13 @@
 module wb_compatible_clockDivisor
 	(CLK_I, DAT_I, DAT_O, RST_I, CYC_O, ACK_I, STB_O, WE_O, ADR_O, STALL_I, GNT, // Wishbone bus
-	sampling_clk, divisor_update, clk_out//Module signal
+	sampling_clk, divisor_update, clk_divide, clk_out//Module signal
 	);
 	
 parameter [4:0] WISHBONE_DATAWIDTH = 5'd15;
 parameter [4:0] WISHBONE_ADDRESSWIDTH = 5'd15;
+parameter [15:0] DATA_HIGH = 16'h400A;
+parameter [15:0] DATA_LOW = 16'h400B;
+
 
 input CLK_I, RST_I, ACK_I;
 input [WISHBONE_DATAWIDTH:0] DAT_I;
@@ -15,6 +18,7 @@ output [WISHBONE_ADDRESSWIDTH:0] ADR_O;
 output CYC_O, STB_O, WE_O;
 
 input sampling_clk, divisor_update;
+input clk_divide;
 output clk_out;
 
 reg [WISHBONE_DATAWIDTH:0] dataToLatch = 15'd0; // Buffer
@@ -58,8 +62,8 @@ assign data_left = num_data_send - sent_counter;
 
 initial begin
 	module_we = 1'b0;
-	module_address[0] = 16'h400A;
-	module_address[1] = 16'h400B;
+	module_address[0] = DATA_HIGH;
+	module_address[1] = DATA_LOW;
 	module_data_out[0] = 16'h0000;
 	module_data_out[1] = 16'h0000;
 end
